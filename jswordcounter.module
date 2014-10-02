@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_form_BASE_FORM_alter()
+ */
+function jswordcounter_form_node_form_alter(&$form, $form_state) {
+	$content_type = $form ['#node']->type;
+	if ($content_type == 'writing365') {
+		drupal_add_js ( drupal_get_path ( 'module', 'jswordcounter' ) . '/js/jquery.wordcount.js', 'file' );
+		$form ['body'] [LANGUAGE_NONE] [0] ['#prefix'] = '<div class="wordcountwrapper">' . '<h3>' . t ( 'You have typed ' ) . ' <span id="wordcount">0</span>' . t ( ' words.' ) . '</h3></div><div id="body-add-more-wrapper">';
+	}
+}

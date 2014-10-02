@@ -1,0 +1,7 @@
+name = Realtime JavaScript Word Counter
+description = Counts the words in Drupal node body fields.
+package = Writing Center Tools
+core = 7.x
+
+files[] = js/jquery.wordcount.js
+project = "writingcenter"
